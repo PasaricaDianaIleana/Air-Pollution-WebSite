@@ -1,0 +1,73 @@
+
+<div class="title">
+{{city}}
+</div>
+<hr>
+
+<div class="box"
+
+[ngClass]="{
+    'good' : aqi <50,
+    'moderate':aqi>51 && aqi<100,
+     'bad':aqi>101 && aqi<150,
+    'unhealty':aqi>151 && aqi<200,
+      'veryUnhealty':aqi>201 && aqi<300,
+    'hazardous':aqi>300 }">
+    
+  
+    <p id="aqi"> {{aqi}} 
+    <span *ngIf="aqi <50">good </span>
+  <span *ngIf="aqi>51 && aqi<100">moderate</span>
+  <span *ngIf="aqi>101 && aqi<150">bad</span>
+  <span *ngIf="aqi>151 && aqi<200">unhealty</span>
+  <span *ngIf="aqi>201 && aqi<300">veryUnhealty</span>
+  <span *ngIf="aqi>300">hazardous</span>
+</p>
+</div>
+<hr style=" border-top: 1px solid #888888; margin-top: 6px;">
+<div>
+  <p>
+    <span style="font-size: 18px;color: #888;margin-left: 60px;">actualizat la {{date  |date:'mediumTime'}}</span>
+    <span style="font-size: 13px;color: #888;margin-left: 89px;"> ({{date }})</span>
+  </p>
+</div>
+
+
+
+<!--<app-sparkline-chart *ngFor="let elem of myData" [name]="elem.name" [data]="elem.data"></app-sparkline-chart>-->
+
+
+	
+        <table id="table-sparkline">
+         
+          <tbody>
+            <tr>
+              <td>Pm10</td>
+              <td>
+                <app-sparkline-chart [name]='pm10' [data]="pm10"></app-sparkline-chart>
+              </td>
+             
+            </tr>
+            <tr>
+              <th>Pm25</th>
+              <td>
+                <app-sparkline-chart [name]='pm25' [data]="pm25"></app-sparkline-chart>
+              </td>
+            
+            </tr>
+            <tr>
+              <th>O3</th>
+             
+              <td>
+                <app-sparkline-chart [name]='O3' [data]="o3"></app-sparkline-chart>
+            
+              </td>
+            
+            </tr>
+          </tbody>
+        </table>
+        <hr style=" border-top: 1px solid #888888; margin-top: 6px;">
+
+        <button  style="margin-top:30px" [routerLink]="['/AirQuality']" type="button" class="btn2 btn-info " (click)="createComponent()">Afla mai multe</button>
+
+      

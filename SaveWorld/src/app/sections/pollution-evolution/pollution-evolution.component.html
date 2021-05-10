@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.4.2/css/all.css">
+<app-navbar></app-navbar>
+
+
+
+
+   
+      <div class="card" id="chart-container">
+        <div class="card-header" style="height: 75px;background-color: white;">
+        
+          <div class="row">
+            <div class="col-md-4" style="text-align: center;">
+             
+              <p (click)="generalInf()"  [ngClass]="test === 'test1' ? 'pStyleChange i.fas2' :'pStyle'"> <span><i class="fas fa-users" style="color: rgb(159, 160, 161);"></i></span>General</p>
+            </div>    
+            <div class="col-md-4" style="text-align: center;">
+              
+             <p (click)="activitatiInf()"  [ngClass]="test === 'test2' ? 'pStyleChange':'pStyle'"><span><i class="fas fa-walking" style="color: rgb(159, 160, 161);"></i></span>Activitati</p> 
+            </div>   
+            <div class="col-md-4" style="text-align: center;">
+              
+             <p (click)="CopiiInf()"  [ngClass]="test === 'test3'? 'pStyleChange':'pStyle'"> <span><i class="fas fa-child" style="color: rgb(159, 160, 161);"></i></span>Sanatatea</p>
+            </div>   
+           
+          </div>  
+            </div>
+
+        <div class="card-body">
+           <p *ngIf="test==='test1'" >{{aqi}}</p>
+
+           <p *ngIf="test==='test2'">{{aqi2}}</p>
+
+           <p *ngIf="test==='test3'">{{aqi3}}</p>
+
+
+        </div>
+      </div>
+    

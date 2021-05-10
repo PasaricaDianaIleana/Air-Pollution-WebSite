@@ -1,0 +1,62 @@
+.parallax{
+    background-image: url(../../../assets/images/air-pollution-comes-from-cars.jpg);
+    min-height: 650px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  
+
+  .layer{
+    position: absolute;
+    bottom: 0;
+  
+    background: rgba(37, 36, 36, 0.5);
+    width:75%;
+    height:750px;
+    padding: 40px;
+    top:595px;
+   
+  }
+  #p1{
+
+   text-align: center;
+    color: white;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+padding: 10px;
+    font-weight: bold;
+    
+   }
+   .parallax2{
+    background:url(../../../assets/images/airPolutionCars.jpg);
+    min-height: 750px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+.p1{
+  margin-top: 85px;
+   line-height: 1.50; 
+   font-family: Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     
+}
+  .title{
+      font-family: 'Enriqueta', arial, serif;
+       line-height: 1.25; 
+       margin: 0 0 10px;
+        font-size: 20px; 
+  
+        font-weight: bold;
+       margin-top:99px ;
+    }
+    .li{
+      font-weight: bold;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 17px;
+    }

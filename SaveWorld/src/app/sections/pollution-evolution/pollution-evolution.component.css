@@ -1,0 +1,33 @@
+#chart-container{
+  top:150px;
+  width: 350px;
+  left: 380px;
+  height: 320px;
+  border-radius:12px;
+  
+}
+
+.pStyle{
+  font-weight: 400;
+  font-size: 17px;
+   bottom:-20px;
+   color:#cbcbcc;
+   cursor: pointer;
+}
+.pStyleChange{
+  font-weight: 400;
+  font-size: 17px;
+   bottom:-20px;
+   color:#3838d8;
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+i.fas {
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0px 0px 2px #888;
+  padding: 0.5em 0.6em;
+  cursor: pointer;
+}
+

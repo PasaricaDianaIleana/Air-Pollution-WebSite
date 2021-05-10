@@ -1,0 +1,114 @@
+<app-navbar></app-navbar>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="panels" id="a">
+  <div class="content2">
+    <p class="edit"> POLUAREA AERULUI PROVOACĂ 8,8 MILIOANE DE DECESE PREMATURE ÎN FIECARE AN</p>
+  </div>
+</div>
+<div class="panels" id="b">
+  <div class="container">
+    <div class="row">
+      <div class="text col col-lg-5">
+        <h4 style="font-weight: normal;font-family: 'Times New Roman', Times, serif;font-size: 27px;">POLUAREA AERULUI
+          PROVOACĂ 8,8 MILIOANE DE DECESE PREMATURE ÎN FIECARE AN</h4>
+        <br>
+        <p class="p4">In ultimii 30 de ani, cercetatorii au descoperit o
+          serie vasta de efecte asupra sanatatii despre care se crede ca
+          sunt asociate cu expunerea la poluarea aerului.
+          Printre ele se numara bolile respiratorii
+          (inclusiv astmul si modificarile functiei pulmonare),
+          bolile cardiovasculare, nasterea prematura si chiar decesul.
+          Astfel, poluarea aerului este responsabilă pentru:
+
+        </p>
+        <br>
+
+        <ul>
+          <li><span style="font-weight: bold;">29%</span> din decesele cauzate de cancerul la plămâni,</li>
+          <li><span style="font-weight: bold;">24%</span> din decesele cauzate de accidente vasculare cerebrale</li>
+          <li><span style="font-weight: bold;">43%</span> din decesele cauzate de boala pulmonară obstructivă cronică.
+          </li>
+
+
+        </ul>
+
+
+      </div>
+      <div class=" col col-lg-7  chart-container">
+
+        <app-highmap></app-highmap>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panels" id="e">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <h3 style="margin-top: 120px;font-size: 30px;font-weight: 300;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Poluarea aerului poate afecta sănătatea și mediul inconjurator în multe moduri</h3>
+       <p style="margin-top: 90px;">
+           Organizația Mondială a Sănătății (OMS) oferă dovezi ale legăturilor dintre expunerea la poluarea aerului și 
+           diabetul de tip 2, obezitatea, inflamația sistemică, boala Alzheimer și demența.
+            Agenția Internațională pentru Cercetarea Cancerului a clasificat poluarea aerului, 
+            în special PM2.5, ca fiind principala cauză de cancer. O recenzie globală recentă a constatat că expunerea 
+            cronică poate afecta fiecare organ din corp, complicând  condițiile de sănătate existente.</p> 
+     
+      </div>
+      <div class="col-lg-7">
+        <div id="accordion">
+          <div class="card" *ngFor="let item of accordionItems;let i=index">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0 cardTitle" >
+                <a href="#accordionItems-{{ i }}" class="btn collapseTitle"  data-toggle="collapse"> <i class="fa"
+                    aria-hidden="true"></i>
+                  {{item.title}}
+                </a>
+              </h5>
+            </div>
+
+            <div id="accordionItems-{{i}}" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="card-body">
+                <p class="accordionText"><span class="badge badge-pill badge-secondary">Sanatate</span> {{item.Sanatate}}</p>
+                <p class="accordionText"> <span class="badge badge-pill badge-secondary">Mediu</span> {{item.Mediu}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panels content4" id="d">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 tabText">
+        <h4
+          style="font-weight: normal;font-family: 'Times New Roman', Times, serif;font-size: 29px;margin-bottom: 100px;">
+          Expunerea la un nivel ridicat de poluanti</h4>
+        Expunerea la niveluri ridicate de poluare a aerului poate provoca o varietate de efecte negative asupra
+        sănătății.
+        Atât expunerea pe termen scurt, cât și pe termen lung la poluanții atmosferici pot provoca cresterea riscului de
+        infecții respiratorii,
+        boli de inimă și cancer pulmonar.
+        <br>
+        Persoane expuse la niveluri suficient de ridicate de anumiți poluanți atmosferici pot prezenta:
+        <br><br>
+        <ul>
+          <li>Iritarea ochilor, nasului și gâtului</li>
+          <li> Tuse, dureri in piept si dificultati de respiratie </li>
+          <li>Agravarea problemelor pulmonare și cardiace existente, cum ar fi astmul</li>
+          <li>Risc crescut de atac de cord</li>
+
+        </ul>
+        O expunere mai lungă sau o doză mai mare poate duce la boli grave, in unele cazuri, poate duce la moarte.
+      </div>
+      <div class="col-lg-6  chart-container" style="margin-top: 90px;">
+        <!--<app-highmap-children ></app-highmap-children>-->
+        <app-bar-chart></app-bar-chart>
+      </div>
+    </div>
+
+  </div>
+</div>

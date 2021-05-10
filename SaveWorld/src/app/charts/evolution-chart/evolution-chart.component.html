@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<ng-container *ngIf="chartOptions">
+    <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+        [callbackFunction]="chartCallback" style="width: 760px; height: 400px; display: block;">
+    </highcharts-chart>
+</ng-container>
+
+<div id="play-controls">
+    <button #playPauseButton (click)="togglePlay()" class="fa fa-play" title="play"></button>
+    <input #playRange (change)="update(0)" type="range" value="0" min="0" max="6" />
+    <output #playOutput for="play-range" name="year"></output>
+</div>

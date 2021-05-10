@@ -1,0 +1,14 @@
+<div (mousemove)="synchronizeTooltips($event)" (touchmove)="synchronizeTooltips($event)"
+  (touchstart)="synchronizeTooltips($event)">
+
+  <ng-container *ngIf="chartOptions1">
+    <highcharts-chart style="width: 100%; display: block; height: 220px;" [Highcharts]="Highcharts"
+      [options]="chartOptions1">
+    </highcharts-chart>
+  </ng-container>
+  <ng-container *ngIf="chartOptions2">
+    <highcharts-chart style="width: 100%; display: block; height: 220px; top:200px" [Highcharts]="Highcharts"
+      [options]="chartOptions2">
+    </highcharts-chart>
+  </ng-container>
+</div>

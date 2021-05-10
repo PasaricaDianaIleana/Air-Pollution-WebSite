@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<app-navbar></app-navbar>
+<p style="display:none;">{{aqi}}</p>
+
+<div class="split left sc1">
+  <div class="box1">
+    <p id="titleBox"><i class="fas fa-map-marker-alt fa-lg" id="fontawesome"></i>
+      <span style="text-align: center;font-size: 1.9vmin;">{{city}}</span>
+
+    </p>
+  </div>
+
+  <div class="box2">
+    <p id="title"><i class="fas fa-globe-europe"></i>AQI(Indexul de calitate al aerului)</p>
+  </div>
+  <div class="overflow-auto">
+  
+
+   <div class="card" id="chart-container" style="height: 320px;">
+      <div class="card-header" style="background-color: #fff;" >
+        Nivelul poluantului Pm25
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <app-gauge-chart [data]="[aqi]"></app-gauge-chart>
+        </p>
+      </div>
+      <div class="card-footer" style="height: 40px; margin-top: -122px; background-color: #fff;">
+        <p  class="poluantValue2"> Pm25-nivel de  poluare <span *ngIf="aqi <50">scazut</span>
+          <span *ngIf="aqi>51 && aqi<100">bun</span>
+          <span *ngIf="aqi>101 && aqi<150">moderat</span>
+          <span *ngIf="aqi>151 && aqi<200">ridicat</span>
+          <span *ngIf="aqi>201 && aqi<300">foarte ridicat</span>
+          <span *ngIf="aqi>300">Extrem de ridicat</span></p>
+      </div>
+    </div>
+
+    <br>
+    <div class="card" id="chart-container">
+      <div class="card-header" style="background-color: #fff;">
+       Valoarea  Pm25 in urmatoarele zile
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+        
+          <app-test-chart [data]="PM25Value" [categories]="mydate"></app-test-chart>
+
+        </p>
+
+
+      </div>
+    </div>
+    <br>
+
+    <div class="card" id="chart-container" style="height: 260px;">
+      <div class="card-header" style="height: 75px;background-color: white;">
+
+        <div class="row">
+          <div class="col-md-4" style="text-align: center;">
+
+            <p (click)="generalInf()" [ngClass]="functie === 'InformatiiGenerale' ? 'pStyleChange i.fas2' :'pStyle'">
+              <span><i class="fas fa-users" id="fas"></i></span>General</p>
+          </div>
+          <div class="col-md-4" style="text-align: center;">
+
+            <p (click)="activitatiInf()" [ngClass]="functie === 'InfActivitati' ? 'pStyleChange':'pStyle'"><span><i
+                  class="fas fa-walking" id="fas"></i></span>Activitati</p>
+          </div>
+          <div class="col-md-4" style="text-align: center;">
+
+            <p (click)="CopiiInf()" [ngClass]="functie === 'copiiInf'? 'pStyleChange':'pStyle'"> <span><i
+                  class="fas fa-child" id="fas"></i></span>Sanatatea</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <p *ngIf="functie === 'InformatiiGenerale'" class="cardText">
+          <span *ngIf="aqi <50">Calitatea aerului este buna iar poluarea aerului prezintă un risc redus. </span>
+          <span *ngIf="aqi>51 && aqi<100">Calitatea aerului este medie.Valorile anumitor poluanti pot fi dadunatoare
+            pentru oamenii cu probleme de sanatate.</span>
+          <span *ngIf="aqi>101 && aqi<150">Adulții și copiii cu probleme pulmonare și adulții cu probleme cardiace, care
+            prezintă simptome, ar trebui să ia în considerare reducerea activității fizice intense, în special în aer
+            liber.</span>
+          <span *ngIf="aqi>151 && aqi<200">Nivelul ridicat de poluanti din aer poate avea un impact grav asupra
+            persoanelor cu boli respiratorii și membrilor grupurilor sensibile în caz de expunere indelungata.</span>
+          <span *ngIf="aqi>201 && aqi<300">Nivelul ridicat de poluanti din aer poate provoca boli respiratorii la
+            persoanele cu expunere prelungită. Efectul poate fi mai pronunțat la persoanele cu boli pulmonare și
+            cardiace</span>
+          <span *ngIf="aqi>300">Valorile poluantilor pot provoca probleme respiratorii la persoanele sănătoase și
+            probleme grave de sănătate la persoanele cu boli pulmonare / cardiace.</span>
+
+
+        </p>
+        <p *ngIf="functie === 'InfActivitati'" class="cardText">
+          <span *ngIf="aqi <50"> Calitatea aerului este buna iar poluarea aerului prezintă un risc redus.</span>
+          <span *ngIf="aqi>51 && aqi<100">Copiii, persoanele în vârstă și persoanele cu boli respiratorii sau cardiace
+            ar trebui să reducă actvitatile în aer liber.</span>
+          <span *ngIf="aqi>101 && aqi<150">Calitatea aerului a depasit limita impusa de Organizatia Mondiala a
+            Sanatatii.Valorile ridicate ale poluantilor pot afecta intreaga populatie.</span>
+          <span *ngIf="aqi>151 && aqi<200">Reduceți intensitatea activităților în aer liber. Este recomandat să limitați
+            timpul în care vă aflați lângă drumuri aglomerate, șantiere, focuri deschise și alte surse de fum.</span>
+          <span *ngIf="aqi>201 && aqi<300">Adulții și copiii cu probleme pulmonare, adulții cu probleme cardiace și
+            persoanele în vârstă ar trebui să evite activitatea fizică intensă.</span>
+          <span *ngIf="aqi>300">Dacă începeți să simțiți disconfort respirator, cum ar fi tuse sau dificultăți de
+            respirație, luați în considerare reducerea intensității activităților în aer liber. Încercați să limitați
+            timpul petrecut în apropierea drumurilor aglomerate, a șantierelor de construcții, a stivelor de emisii
+            industriale, a focurilor deschise și a altor surse de fum.</span>
+        </p>
+
+        <p *ngIf="functie === 'copiiInf'" class="cardText">
+          <span *ngIf="aqi <50"> Calitatea aerului este buna iar poluarea aerului prezintă un risc redus.</span>
+          <span *ngIf="aqi>51 && aqi<100"> <span *ngIf="aqi <50"> Calitatea aerului este medie.Luați în considerare
+              reducerea activităților în aer liber dacă simitit un disconfort respiratoriu.</span>
+            <span *ngIf="aqi>51 && aqi<100">Dacă începeți să simțiți disconfort respirator, cum ar fi tuse sau
+              dificultăți de respirație, luați în considerare reducerea intensității activităților în aer liber.</span>
+            <span *ngIf="aqi>101 && aqi<150">Dacă începeți să simțiți disconfort respirator, cum ar fi tuse sau
+              dificultăți de respirație, luați în considerare reducerea intensității activităților în aer liber.</span>
+            <span *ngIf="aqi>151 && aqi<200">Copiii și adulții activi și persoanele cu boli respiratorii, cum ar fi
+              astmul, ar trebui să evite efortul prelungit în aer liber.Toate persoanele, în special copiii, ar trebui
+              să limiteze efortul prelungit în aer liber</span>
+            <span *ngIf="aqi>201 && aqi<300">veryUnhealty</span>
+            <span *ngIf="aqi>300">hazardous</span></span>
+        </p>
+      </div>
+    </div>
+    <br>
+    <div class="card" id="chart-container" style="min-height: 410px;">
+     
+     <p id="HeaderPoluanti">Valorile Poluantilor</p>  
+      
+      <div class="card-body">
+        
+        <table class="table" style="border-spacing: 18px;border-collapse: collapse;margin-bottom: 20px;">
+        
+          <tbody >
+            <tr>
+              <td  class="firstCell">PM10</td>
+              <td  ng-show="pm10Value != null" class="poluantValue" >{{pm10Value}} <span class="poluantValue2">µg/m</span>  </td>
+            </tr>
+            <tr>
+              <td  class="firstCell" >PM25</td>
+              <td  ng-show="PM25!=null" class="poluantValue">{{PM25}}  <span class="poluantValue2">µg/m</span></td>
+            </tr>
+            <tr>
+              <td class="firstCell">SO2</td>
+            
+              <td ng-show="SO2Value!= null"  class="poluantValue" >{{SO2Value}} <span class="poluantValue2">ppb</span></td>
+            </tr>
+            <tr >
+              <td class="firstCell">H</td>
+            
+              <td ng-show="HValue!= null" class="poluantValue">{{HValue}} <span class="poluantValue2">ppb</span></td>
+            </tr>
+            <tr>
+              <td class="firstCell" >NO2</td>
+            
+              <td ng-show="N02Value!= null" class="poluantValue">{{N02Value}} <span class="poluantValue2">ppb</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="split right" id="border">
+  <div id="map"></div>
+</div>

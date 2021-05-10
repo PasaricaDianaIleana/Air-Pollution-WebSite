@@ -1,0 +1,7 @@
+<ng-container *ngIf="chartOptions">
+    <highcharts-chart [Highcharts]="Highcharts" [constructorType]="chartConstructor" [options]="chartOptions"
+        [update]="updateFlag"
+        style="width: 660px; height: 400px; display: block; margin-bottom: 60px;">
+    </highcharts-chart>
+</ng-container>
+<button (click)="onClick()">Anul 2020</button>

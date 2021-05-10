@@ -1,0 +1,59 @@
+.title{
+    font-weight: 800;
+    color: rgb(46, 44, 44);
+    font-size: 18px;
+}
+hr{
+    border-top: 1px solid #888888;
+    margin: 0px 0px 5px 0;
+}
+
+.good {
+    background-color:#009966;
+    text-shadow: 1px 0px 1px #009966
+  
+}
+
+.moderate{
+    background-color: #ffde33;
+    text-shadow: 1px 0px 1px #ffde33
+}
+.bad{
+    background-color: #ff9933;
+    text-shadow: 1px 0px 1px #ff9933
+}
+.unhealty{
+    background-color: #cc0033;
+    text-shadow: 1px 0px 1px #cc0033;
+}
+.veryUnhealty{
+    background-color: #660099;
+    text-shadow: 1px 0px 1px #660099
+}
+.hazardous{
+    background-color: #7e0023;
+    text-shadow: 1px 0px 1px #7e0023
+}
+p {
+    font-family: Lato;
+  }
+  
+  #result {
+      text-align: right;
+      color: gray;
+      min-height: 2em;
+  }
+  
+.box{
+    
+    width:100%;
+    height: 50px;
+    margin: -11px 0px 0px 0;
+}
+#aqi{
+    font-size :24px;
+    font-weight: 600;
+    color:white;
+    text-align: center;
+ 
+}

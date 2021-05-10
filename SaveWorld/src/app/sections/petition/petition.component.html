@@ -1,0 +1,127 @@
+<app-navbar></app-navbar>
+<div style="height:100% ;">
+    <div class="header">
+        <p class="content">
+            In fiecare minut 26 de hectare de padure sunt pierdute!
+        </p>
+    </div>
+</div>
+
+<div>
+    <h1 class="title">Semneaza pentru a opri defrisarea padurilor</h1>
+
+
+</div>
+
+
+<img class="img2 " src="../../../assets/images/Forest.jpg">
+<form [formGroup]="addForm" novalidate
+    style="width:550px; height:170px; float: right;margin-top: 140px; margin-right: 122px; ">
+    <div class="card">
+
+        <div class="card-body">
+            <div class="form-group ">
+                <label>Nume:</label>
+                <input type="text" class="form-control" id="txtName" formControlName="Nume" />
+            </div>
+            <div *ngIf="addForm.controls['Nume'].invalid && (addForm.controls['Nume'].dirty || addForm.controls['Nume'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addForm.controls['Nume'].errors.required">
+                    Is required.
+                </div>
+            </div>
+            <div class="form-group ">
+                <label> Email:</label>
+                <input type="text" class="form-control" id="txtEmail" formControlName="Email" />
+            </div>
+            <div *ngIf="addForm.controls['Email'].invalid && (addForm.controls['Email'].dirty || addForm.controls['Email'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addForm.controls['Email'].errors.required">
+                    Is required.
+                </div>
+            </div>
+            <div class="form-group ">
+                <label>Adresa:</label>
+                <input type="text" class="form-control" id="txtState" formControlName="Adresa" />
+            </div>
+            <div *ngIf="addForm.controls['Adresa'].invalid && (addForm.controls['Adresa'].dirty || addForm.controls['Adresa'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="addForm.controls['Adresa'].errors.required">
+                    Is required.
+                </div>
+            </div>
+            <div class="form-check" style="margin-left: 6%;">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Yes! Tell me if this petition wins, and how I can help other relevant petitions
+                </label>
+            </div>
+            <div class="form-check" style="margin-left: 6%;">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    No. I do not want to hear about this petition's progress or other relevant petitions.
+
+                </label>
+            </div>
+            <div class="dropdown">
+                <span>Mouse over me</span>
+                <div class="dropdown-content">
+                    <highcharts-chart style="width: 100%; display: block" [Highcharts]="Highcharts"
+                        [constructorType]="'chart'" [options]="chartOptions" [(update)]="updateFlag">
+                    </highcharts-chart>
+                </div>
+            </div>
+            <button type="submit" id="btnAdd" value="Add" (click)="onSumbit()"
+                [disabled]="addForm.pristine || addForm.invalid" class="btn btn-danger "
+                style="margin-left:25%; width: 50%; font-weight: bold;">
+                Sign this petition
+            </button>
+
+
+        </div>
+    </div>
+</form>
+
+<div class="container">
+    <div class="row">
+
+
+
+
+        <div class="col col-lg-7 left">
+
+
+            <p class="text">Pădurile acoperă mai mult de 30% din suprafața Pământului, potrivit World Wildlife Fund.
+                Aceste zone împădurite pot furniza hrană, medicamente și combustibil pentru mai mult de un
+                miliard de oameni. La nivel mondial, pădurile oferă locuri de muncă în sectorul forestier la
+                13,4 milioane de oameni, iar alte 41 de milioane de oameni au locuri de muncă legate de
+                păduri.</p>
+            <p class="text">Omenirea <span style="font-weight: bold;">pierde anual paduri de circa 20 de milioane de
+                    hectare
+                </span>, o suprafata egala cu teritoriul
+                Marii Britanii, defrisari care au drept consecinta emiterea a milioane de tone de dioxid de
+                carbon.</p>
+            <p class="text">Desi ritmurile de despadurire sunt diferite in diverse regiuni ale lumii,
+                specialistii sunt unanimi in a prognoza ca daca nu se vor lua masuri si ritmul actual al
+                despaduririlor se va mentine, disparitia completa a acestora va avea loc pana la sfarsitul
+                acestui secol, urmarile asupra mediului si chiar asupra vietii pe Terra fiind inestimabile.
+            </p>
+
+        </div>
+
+        <div class="col col-lg-5 right">
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div>

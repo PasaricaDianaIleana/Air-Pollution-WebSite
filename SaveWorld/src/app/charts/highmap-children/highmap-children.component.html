@@ -1,0 +1,5 @@
+<ng-container *ngIf="chartOptions">
+    <highcharts-chart id="container" [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+        [options]="chartOptions" style="width: 500px; height: 400px; ">
+    </highcharts-chart>
+</ng-container>

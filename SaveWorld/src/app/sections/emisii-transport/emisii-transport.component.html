@@ -1,0 +1,96 @@
+<app-navbar></app-navbar>
+<div class="parallax"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-lg-6" style="right: 10px;">
+      <h3 class="title">Transportul este o sursă majoră de poluare a aerului.</h3>
+      <p style="margin-top: 35px; line-height: 1.50; font-family: Arial, Helvetica, sans-serif;  font-size: 16px;">
+        Mașinile, camioanele și autobuzele alimentate contribuie
+        major la poluarea aerului. De fapt, <span style="font-weight: bold; color: rgb(39, 96, 172);">transportul emite
+          mai mult
+          de jumătate din cantitatea de oxizi de azot din aerul și este o sursă
+          care contribuie la </span>
+        <a [routerLink]="['/IncalzireaGlobala']">încălzirea globală.</a>
+
+        Aceste emisii maresc riscul aparatiei afecțiunilor respiratorii, cum ar fi astmul și
+        bronșita, de asemenea cresc riscul apariției unor afecțiuni care pun viața în
+        pericol, precum cancerul .
+        <br>
+        <span style="font-weight: bold; margin-top: 5px;">Principalii poluanți care sunt emisi de catre autovehicule
+          sunt :</span>
+      </p>
+      <ul class="list">
+        <li class="li"> PM 2.5</li>
+        <li class="li"> Compuși organici volatili</li>
+        <li class="li">Oxizi de azot (NOx)</li>
+        <li class="li">Dioxid de carbon(CO2)</li>
+        <li class="li">Dioxid de sulf (SO2)</li>
+
+      </ul>
+
+    </div>
+
+    <div class="col col-lg-6">
+      <app-column-chart2></app-column-chart2>
+    </div>
+
+  </div>
+</div>
+
+<div class="parallax2"> </div>
+<div class="container">
+  <div class="row">
+    <div class="text col col-lg-5">
+      <h3 class="title">Emisia de CO2 de la autovehicule</h3>
+      <p class="p1">
+        Emisiile de poluanți atmosferici, cum ar fi dioxidul de carbon, oxizi de azot și particule
+        pot afecta calitatea aerului și au efect negativ asupra sănătății,
+        cum ar fi <span style="font-weight: bold; color: rgb(39, 96, 172);">bolile respiratorii, bolile cardiovasculare
+          și cancerul.</span>
+        Principalele emisii produse de autovehicule sunt gazele cu efect de seră, care
+        contribuie la schimbările climatice.Principalul gaz cu efect de seră este
+        dioxidul de carbon (CO2), dar vehiculele produc și oxid de azot și metan
+        Transportul este sursa a aproape 30% din totalul de emisii de CO2 .
+        Dintre acestea, 72% provin din transportul rutier.
+        Un vehicul tipic de pasageri emite aproximativ 4,6 tone metrice de dioxid de carbon pe an.
+      </p>
+
+
+
+    </div>
+    <div class=" col col-lg-7 ">
+
+      <!--<highcharts-chart
+id="container" 
+[Highcharts]="Highcharts"
+[constructorType]="chartConstructor"
+[options]="chartOptions"
+ style="width: 660px; height: 400px; display: block; margin-top: 10%;">
+</highcharts-chart>
+*/-->
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist" style="padding: 30px; margin-top: 150px;">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Evolutia Emisiei de C02</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Emisiile de C02</a>
+        </li>
+
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <app-evolution-chart></app-evolution-chart>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <app-chart></app-chart>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

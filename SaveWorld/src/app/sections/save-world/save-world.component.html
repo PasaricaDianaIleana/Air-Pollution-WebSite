@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="panels"  id="a"  >
+  <div class="layer">
+    <p id="p1">Poluarea aerului este unul dintre factorii de risc major pentru sanatate si mediu.</p>
+<hr>
+    <p class="p2">În ciuda îmbunătățirilor lente, poluarea aerului continuă să depășească limitele
+      și valorile din ghidurile Organizației Mondiale a Sănătății.Nivelul poluării din aer rămâne la
+      cote periculoase în mai multe zone ale lumii, potrivit raportului OMS.
+      Noile date indică faptul că 9 din 10 persoane respiră aer care conţine un nivel ridicat de
+      poluanţi.</p>
+  </div>
+</div>
+<div class="panels"  id="b" style="height: 760px; ">
+  <div class="container" >
+    <div class="row">
+      <div class=" col col-lg-5 chart">
+        <h3 style="font-size: 30px;">Evolutia emisiei gazelor poluante </h3>
+        <p class="p1">Emisiile multor poluanți atmosferici au scăzut substanțial din anul 2008 pana in prezent,
+          determinând o îmbunătățire a calității aerului în regiune.
+        </p>
+        <ul>
+          <li>Dioxidul de carbon<span style="font-weight: bold;">(CO2) <i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i></span>34%
+            
+          </li>
+          <li>Oxizi de azot<span style="font-weight: bold;"> (NOx) <i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i></span>41%
+            
+          </li>
+          <li>NH3<span style="font-weight: bold;"> <i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i></span>11%
+            
+          </li>
+          <li>PM 2.5<i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i>17%
+           
+          </li>
+          <li>PM 10<i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i>28%
+         
+          </li>
+          <li>Dioxid de sulf<span style="font-weight: bold;">(SO2)<i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i></span>64%
+           
+          </li>
+          <li>Compusi organici volatili<span style="font-weight: bold;">(VOC)<i class="fa fa-arrow-down" aria-hidden="true" style="margin-left: 5px;color: green;"></i></span>
+            
+          </li>
+        </ul>
+        <p>În ciuda îmbunătățirilor lente, poluarea aerului continuă să depășească limitele
+          și valorile din ghidurile Organizației Mondiale a Sănătății.Nivelul poluării din aer rămâne la
+          cote periculoase în mai multe zone ale lumii.</p>
+      </div>
+      <div class=" col col-lg-7  chart-container">
+        <app-line-chart></app-line-chart>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panels"  id="c" style="height: 730px; ">
+<div class="container">
+  <div class="row">
+    <div class=" col col-lg-5">
+      <h3 id="h3">Emisia gazelor poluante </h3>
+      <p class="text-style">
+        Poluarea aerului este realizata prin  emisia în atmosferă a unor substanțe nocive care afecteaza sănătatea oamenilor si mediul.
+        Există diferite tipuri de poluanți atmosferici.Poluantii gazosi:dioxid de sulf<span style="font-weight: bold;">(SO2)</span>,oxid de azot<span style="font-weight: bold;">(NOx)</span>,dioxid de carbon<span style="font-weight: bold;">(CO2)</span>,compuși organici volatili<span style="font-weight: bold;">(VOC)</span>.
+        Particulele în suspensie reprezintă un amestec complex de particule foarte mici și picături de lichid,acestea provin în special de la emisiile poluante generate de industrie, trafic şi încălzirea locuinţelor. 
+      </p>
+      <p class="text-style">
+        Pulberile în suspensie, dioxidul de azot și ozonul de la nivelul solului sunt recunoscuți în prezent drept cei trei poluanți care
+         afectează cel mai grav sănătatea umană. Expunerile pe termen lung și cele maxime la acești poluanți variază ca gravitate și impact,
+          de la efectele minore asupra sistemului respirator până la decesul prematur.
+      </p>
+    </div>
+    <div class="col col-lg-7 " >
+     
+      <video id="video"  style="height: 550px; object-fit: fill;margin-top:100px ; padding-top:-100px;" width="700" controls autoplay>
+        <source src="../../assets/images/mixkit-smoke-from-power-plant-4362.mp4" >
+      </video>
+    
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="panels" id="d" style="height: 720px;">
+  <div class="container">
+    <div class="row">
+      <div class=" col col-lg-5" style="top: 170px;">
+        
+        <h3 class="h3">Surse de poluare a aerului </h3>
+
+        <p style="font-size:20">Există patru tipuri principale de surse de poluare a aerului:
+        </p>
+        <ul>
+          <li><span style="font-weight: bold;">Surse mobile:</span> masini,autobuze,avioane,camioane,trenuri</li>
+          <li><span style="font-weight: bold;">Surse statice:</span> centrale electrice,rafinarii de petrol,instalatii
+            industriale,fabrici</li>
+          <li><span style="font-weight: bold;">Surse naturale:</span> praf,incendii,vulcani</li>
+          <li><span style="font-weight: bold;">Surse industriale:</span> agricultura,constructii</li>
+
+        </ul>
+       
+      </div>
+      <div class="col col-lg-7  chart-container" >
+       
+        <app-column-chart></app-column-chart>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
